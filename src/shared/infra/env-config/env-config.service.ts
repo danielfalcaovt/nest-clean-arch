@@ -1,10 +1,10 @@
-import { Injectable } from '@nestjs/common';
-import { EnvConfig } from './env-config.interface';
-import { ConfigService } from '@nestjs/config';
+import { Injectable } from '@nestjs/common'
+import { EnvConfig } from './env-config.interface'
+import { ConfigService } from '@nestjs/config'
 
 @Injectable()
 export class EnvConfigService implements EnvConfig {
-  constructor(private readonly configService: ConfigService) { }
+  constructor(private readonly configService: ConfigService) {}
   NodeEnv(): string {
     return String(this.configService.get<string>('NODE_ENV'))
   }

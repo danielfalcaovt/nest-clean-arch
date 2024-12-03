@@ -1,5 +1,5 @@
-import UserDataBuilder from "../testing/helpers/user-data.builder"
-import { User, UserEntity } from "./user.entity"
+import UserDataBuilder from '../testing/helpers/user-data.builder'
+import { User, UserEntity } from './user.entity'
 
 const makeSut = (): UserEntity => {
   const props: User = UserDataBuilder({})
@@ -9,13 +9,13 @@ const makeSut = (): UserEntity => {
 describe('UserEntity', () => {
   it('Should generate createdAt if not found', () => {
     const sut = makeSut()
-    expect(sut.user.createdAt).toBeDefined()
+    expect(sut.props.createdAt).toBeDefined()
   })
   it('Should get method return the correct value', () => {
     const sut = makeSut()
-    expect(sut.user.name).toBe(sut.name)
-    expect(sut.user.email).toBe(sut.email)
-    expect(sut.user.password).toBe(sut.password)
-    expect(sut.user.createdAt).toBe(sut.createdAt)
+    expect(sut.props.name).toBe(sut.name)
+    expect(sut.props.email).toBe(sut.email)
+    expect(sut.props.password).toBe(sut.password)
+    expect(sut.props.createdAt).toBe(sut.createdAt)
   })
 })

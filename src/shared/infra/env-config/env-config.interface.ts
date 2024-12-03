@@ -1,4 +1,4 @@
 export interface EnvConfig {
-  NodeEnv: () => string;
-  ServerPort: () => number;
+  NodeEnv: () => string
+  ServerPort: () => number
 }
